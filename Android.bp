@@ -1,0 +1,36 @@
+// Auto-generated prebuilt Blueprint for external/jsr330
+// Jar built from external/jsr330 sources (AOSP android-14.0.0_r67); Forgejo arch pkg
+// jsr330#14.0.0_r67-1 is the published host equivalent.
+
+package {
+    default_applicable_licenses: ["external_jsr330_license"],
+}
+
+license {
+    name: "external_jsr330_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+    ],
+    license_text: [
+        "NOTICE",
+    ],
+}
+
+java_import {
+    name: "jsr330",
+    host_supported: true,
+    installable: false,
+    jars: ["share/jsr330/jsr330.jar"],
+    sdk_version: "core_current",
+    min_sdk_version: "30",
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.adservices",
+        "com.android.devicelock",
+        "com.android.extservices",
+        "com.android.healthfitness",
+        "com.android.mediaprovider",
+        "com.android.ondevicepersonalization",
+    ],
+}

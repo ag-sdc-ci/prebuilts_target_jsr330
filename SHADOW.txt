@@ -1,0 +1,13 @@
+shadow prebuilt repo: prebuilts_target_jsr330 (target+host java)
+  upstream: external/jsr330
+  api-level: n/a (jar built from tree source @ android-14.0.0_r67; no extractive apex)
+  blobs: none (share/jsr330/jsr330.jar compiled with javac --release 8 from
+    external/jsr330/src; Forgejo arch pkg jsr330#14.0.0_r67-1 publishes the same jar)
+  layout: flattened root (payload contents at repo root)
+  modules: jsr330
+  notes: host_supported true - in-tree host consumers include tools/metalava,
+    prebuilts/misc/common/androidx-test + android-support-test; device consumers
+    include SystemUI, WindowManager/Shell, DeviceLock, weathereffects, etc.
+    jsr330-tck (java_library_host, test-only) skipped. apex_available mirrored
+    from source Android.bp. min_sdk_version 30 per fleet exemplar (cbor-java).
+  date: 2026-10-24
