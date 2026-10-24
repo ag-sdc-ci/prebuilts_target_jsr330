@@ -5,9 +5,11 @@ shadow prebuilt repo: prebuilts_target_jsr330 (target+host java)
     external/jsr330/src; Forgejo arch pkg jsr330#14.0.0_r67-1 publishes the same jar)
   layout: flattened root (payload contents at repo root)
   modules: jsr330
-  notes: host_supported true - in-tree host consumers include tools/metalava,
-    prebuilts/misc/common/androidx-test + android-support-test; device consumers
-    include SystemUI, WindowManager/Shell, DeviceLock, weathereffects, etc.
+  notes: host_supported true - mirrored from source Android.bp (java_library_static
+    jsr330 has host_supported: true). Grep of los-21 finds NO host-side consumers;
+    prebuilts/misc/common/androidx-test + android-support-test (espresso) and all
+    other referencers are device-side. Device consumers include SystemUI,
+    WindowManager/Shell, DeviceLock, mobile-data-download, weathereffects, etc.
     jsr330-tck (java_library_host, test-only) skipped. apex_available mirrored
     from source Android.bp. min_sdk_version 30 per fleet exemplar (cbor-java).
   date: 2026-10-24
